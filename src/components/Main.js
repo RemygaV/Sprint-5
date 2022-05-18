@@ -1,14 +1,14 @@
 import '../App.css';
 import Form from "./Form";
 import React, { useState, useEffect } from 'react';
+import TodosList from './TodosList';
 
 function Main() {
     const [input, setInput] = useState('');
-    const [todos, setTodos] = useState();
+    const [todos, setTodos] = useState([]);
 
     return (
         <div className="main">
-
             <div className='app-wrapper'>
                 <div>
                     <h1> Todo List </h1>
@@ -18,6 +18,13 @@ function Main() {
                     <Form
                         input={input}
                         setInput={setInput}
+                        todos={todos}
+                        setTodos={setTodos}
+                    />
+                </div>
+
+                <div>
+                    <TodosList
                         todos={todos}
                         setTodos={setTodos}
                     />
