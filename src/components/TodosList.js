@@ -29,7 +29,7 @@ function TodosList({ todos, setTodos, setEditTodo }) {
                     <input
                         type="text"
                         value={todo.title}
-                        className="list"
+                        className={`list ${todo.completed ? "complete" : ""}`} 
                         onChange={(event) => event.preventDefault()} />
                     <div>
                         <button className='button-complete task button' onClick={() => handleComplete(todo)}>Done</button>
