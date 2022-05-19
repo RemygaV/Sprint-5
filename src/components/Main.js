@@ -6,6 +6,7 @@ import TodosList from './TodosList';
 function Main() {
     const [input, setInput] = useState('');
     const [todos, setTodos] = useState([]);
+    const [editTodo, setEditTodo] = useState(null);
 
     return (
         <div className="main">
@@ -20,6 +21,8 @@ function Main() {
                         setInput={setInput}
                         todos={todos}
                         setTodos={setTodos}
+                        editTodo={editTodo}
+                        setEditTodo={setEditTodo}
                     />
                 </div>
 
@@ -27,6 +30,7 @@ function Main() {
                     <TodosList
                         todos={todos}
                         setTodos={setTodos}
+                        setEditTodo={setEditTodo}
                     />
                 </div>
 
