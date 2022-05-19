@@ -1,6 +1,11 @@
 import React from 'react';
 
 function TodosList({ todos, setTodos }) {
+
+    const handleDelete = ({id}) => {
+        setTodos(todos.filter((todo) => todo.id !== id));
+    };
+
     return (
         <div>
             {todos.map((todo) => (
@@ -13,7 +18,7 @@ function TodosList({ todos, setTodos }) {
                     <div>
                         <button className='button-complete task button'>Done</button>
                         <button className='button-edit task button'>Edit</button>
-                        <button className='button-delete task button'>Delete</button>
+                        <button className='button-delete task button' onClick={() => handleDelete(todo)}>Delete</button>
                     </div>
 
                 </li>
